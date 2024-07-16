@@ -36,6 +36,12 @@ while len(user_guesses) < len(ukraine_regions_data):
     ).title())
 
     if user_answer == "Exit":
+        missing_regions = [region for region in ukraine_regions_data["region"].tolist() if region not in user_guesses]
+        # for region in ukraine_regions_data["region"].tolist():
+        #     if region not in user_guesses:
+        #         missing_regions.append(region)
+        new_data = pandas.DataFrame(missing_regions)
+        new_data.to_csv("missing_regions.csv")
         break
 
     if user_answer in ukraine_regions_data["region"].values:
@@ -46,7 +52,3 @@ while len(user_guesses) < len(ukraine_regions_data):
 
         timm.goto(x, y)
         timm.write(user_answer, align="center", font=("Arial", 14, "normal"))
-
-
-
-screen.exitonclick()
