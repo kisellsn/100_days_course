@@ -1,12 +1,13 @@
 from day_34.data import question_data
+from day_34.ui import QuizInterface
 from question_model import Question
 from quiz_brain import QuizBrain
 
 def create_questions(data):
     questions = []
     for question in data:
-        question_text = question["text"]
-        answer = question["answer"]
+        question_text = question["question"]
+        answer = question["correct_answer"]
 
         questions.append(Question(question=question_text, answer=answer))
 
@@ -17,6 +18,5 @@ if __name__ == "__main__":
 
     quiz = QuizBrain(questions)
 
-    while quiz.still_has_questions():
-        quiz.next_question()
+    window = QuizInterface(quiz)
 

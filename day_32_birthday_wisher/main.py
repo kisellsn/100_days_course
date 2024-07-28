@@ -4,8 +4,10 @@ import smtplib
 import datetime as dt
 import pandas
 
-SENDER_EMAIL = "sonyakondratskaya@gmail.com"
-PASSWORD = "ereo ozya axce vkqp"
+from dotenv import load_dotenv
+load_dotenv()
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+PASSWORD = os.getenv("PASSWORD")
 SENDER_NAME = "Sonia"
 letters_folder_path = "letter_templates"
 
