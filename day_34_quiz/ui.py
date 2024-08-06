@@ -1,6 +1,6 @@
 from tkinter import *
 
-from day_34.quiz_brain import QuizBrain
+from day_34_quiz.quiz_brain import QuizBrain
 
 THEME_COLOR = "#375362"
 

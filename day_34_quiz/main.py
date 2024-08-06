@@ -1,5 +1,5 @@
-from day_34.data import question_data
-from day_34.ui import QuizInterface
+from day_34_quiz.data import question_data
+from day_34_quiz.ui import QuizInterface
 from question_model import Question
 from quiz_brain import QuizBrain
 
